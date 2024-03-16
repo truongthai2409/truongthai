@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    html {
+        font-family: "Ubuntu Mono", system-ui, sans-serif;
+    }
+    span{
+        margin: 0px;
+    }
+    body{
+        margin: 0px;
+    }
+}
+
+@layer components{
+    .page_container{
+        width: 100%;
+    }
+    .button_nav{
+        display: block;
+        padding: 5px 10px;
+        margin: 10px;
+        width: 160px;
+        border-radius: 80px;
+        cursor: pointer;
+        &_active{
+            background-color: rgb(29, 29, 29);
+            color: white;
+            cursor: pointer;
+            transition-duration: 1.5s;
+        }
+    }
+    .bg-image{
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(152,150,182,1) 85%, rgba(240,240,240,1) 100%);
+        width: 100%;
+        height: 100%;
+    }
+}
