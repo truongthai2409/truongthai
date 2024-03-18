@@ -1,10 +1,10 @@
 import { Fragment } from "react"
-import Heads from "./compoments/Heads"
-import Home from "./compoments/Home"
-import About from "./compoments/About"
-import Projects from "./compoments/Projects"
-import Contact from "./compoments/Contact"
-import Footer from "./compoments/Footer"
+import Heads from "./layout/Heads"
+import Home from "./layout/Home"
+import About from "./layout/About"
+import Projects from "./layout/Projects"
+import Contact from "./layout/Contact"
+import Footer from "./layout/Footer"
 
 function App() {
   return (
