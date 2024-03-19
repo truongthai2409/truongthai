@@ -5,3 +5,4 @@ export default function Earth_3D() {
     <Spline scene="https://prod.spline.design/5Z1Cp9psMRprvyY2/scene.splinecode" />
   );
 }
+
