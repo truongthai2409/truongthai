@@ -4,7 +4,6 @@
 export default function TabButton({ children, isActive, onClick }) {
   if (isActive) {
     return <button className="button_about button_about_active">{children}</button>
-    
   }
   return (
     <button 

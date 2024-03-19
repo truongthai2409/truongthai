@@ -1,12 +1,14 @@
 // import React from 'react';
 
-import { Link } from 'react-scroll';
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
     return (
-        <footer className="description h-[300px] bg-white">
-            <h1 className="text-3xl text-black">Footer</h1>
-            <Link to="Heads" smooth={true} duration={900}>Top</Link>
+        <footer className="description h-[50px] bg-image ">
+            <hr></hr>
+            <div className='flex justify-center mt-3'>
+                <h1 className="text-white text-xm">Copyright © {currentYear} By Truong Thai.</h1>
+            </div>
         </footer>
     );
 };
