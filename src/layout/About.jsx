@@ -20,7 +20,7 @@ const About = () => {
                 <div className="flex items-center justify-center">
                     <div className='flex max-w-screen-xl bg-blur '>
                         <div className='w-2/5 p-10 '>
-                            <img className='object-cover w-full h-[75vh] border rounded-lg ' src="/images/profile.jpg" alt="" />
+                            <img className='object-cover w-full h-[75vh] border rounded-lg ' src="images/profile.jpg" alt="" />
                             {/* <img className='object-cover w-full h-[75vh] border rounded-lg ' src="" alt="" /> */}
                         </div>
                         <div className='w-3/5 p-8'>
@@ -32,7 +32,7 @@ const About = () => {
                                 . I love to sing, play sports, and travel. In the future, I want to go to a country with snow so I can experience!
                             </span>
                             <div>
-                                <ul className="h-auto mt-3  text-slate-700">
+                                <ul className="h-auto mt-3 text-slate-700">
                                     {Data.map(item => (
                                         <TabButton
                                             key={item.id}
