@@ -1,10 +1,29 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Element } from 'react-scroll';
 import { useTransition } from 'react';
 import TabButton from '../compoments/TabButton.jsx'
 import Data from '../utils/Data.jsx';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from "@gsap/react";
 
 const About = () => {
+
+    gsap.registerPlugin(ScrollTrigger);
+    const container = useRef();
+   
+    useGSAP(() => {
+        gsap.from(".about",{
+            opacity: 0,
+            x: 200,
+            duration: 3,
+            scrollTrigger: {
+                trigger: ".about",
+                // markers: true
+            }
+        })
+    }, {scope: container})
+
     const [tab, setTab] = useState("Skills");
     const [isPending, startTransition] = useTransition();
 
@@ -16,9 +35,9 @@ const About = () => {
 
     return (
         <Element name='About'>
-            <section className="w-full h-auto p-10 text-slate-100 bg-image">
+            <section ref={container} className="w-full h-auto p-10 overflow-hidden About text-slate-100 bg-image">
                 <div className="flex items-center justify-center">
-                    <div className='flex max-w-screen-xl bg-blur '>
+                    <div  className='flex max-w-screen-xl about bg-blur '>
                         <div className='w-2/5 p-10 '>
                             <img className='object-cover w-full h-[75vh] border rounded-lg ' src="images/profile.jpg" alt="" />
                             {/* <img className='object-cover w-full h-[75vh] border rounded-lg ' src="" alt="" /> */}
