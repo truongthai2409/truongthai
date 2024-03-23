@@ -10,7 +10,7 @@ export const ProjectURL = {
     movie: 'https://truongthai2409.github.io/MovieApp/'
 };
 export const ProjectImage = {
-    pops: '/images/POPS.png',
-    figma: '/images/Candy.png',
-    movie: '/images/Movie.png'
+    pops: 'images/POPS.png',
+    figma: 'images/Candy.png',
+    movie: 'images/Movie.png'
 };
