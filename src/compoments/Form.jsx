@@ -18,7 +18,7 @@ const Form = () => {
                     <textarea className="w-full py-3 pl-2 mt-2 overflow-hidden rounded-lg outline-none resize-none" type="text" id="messages" required></textarea>
                 </div>
                 <div className="flex justify-center">
-                    <button className="px-6 py-3 capitalize transition duration-150 ease-out border mt-7 hover:ease-in -full rounded-3xl hover:bg-slate-700 hover:text-white" type="submit">Send Messages <GrSend className="inline-block" /></button>
+                    <button className="px-6 py-3 capitalize transition duration-150 ease-out border sm-max:text-xs mt-7 hover:ease-in-full rounded-3xl hover:bg-slate-700 hover:text-white" type="submit">Send Messages <GrSend className="inline-block" /></button>
                 </div>
             </form>
         </Fragment>

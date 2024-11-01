@@ -25,7 +25,7 @@ const Contact = () => {
 
     return (
         <Element name="Contact">
-            <section ref={container} className="description h-[100vh] bg-image">
+            <section ref={container} className="description h-[100vh] sm-max:h-[90vh] bg-image">
                 <div className="flex items-center justify-center">
                     <div className="max-w-screen-xl contact_form contact">
                         <h1 className="p-4 text-4xl text-center text-white">Contact</h1>

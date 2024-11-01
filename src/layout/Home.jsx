@@ -8,11 +8,11 @@ const Home = () => {
     return (
         <Element name="Home">
             <section className="flex items-center justify-center bg-image">
-                <div className="max-w-screen-2xl h-[100vh] flex text-slate-300">
+                <div className="max-w-screen-2xl h-[100vh] sm-max:h-[90lvh] flex text-slate-300">
                     <div className="w-3/5 pl-20 my-auto">
-                        <div className="flex top_head">
+                        <div className="flex top_head sm-max:relative">
                             <h2 className="text-4xl sm-max:text-2xl">Hi. I&apos;m Truong Thai</h2>
-                            <img className='object-cover w-10 ml-2 sm-max:absolute sm-max:top-[170px] sm-max:right-[120px]' src="images/hand.gif" alt="" />
+                            <img className='object-cover w-10 ml-2 sm-max:absolute sm-max:top-6 sm-max:-right-6' src="images/hand.gif" alt="" />
                         </div>
                         <h1 className="font-bold text-8xl sm-max:text-[55px]">
                             Frontend Web Developer
