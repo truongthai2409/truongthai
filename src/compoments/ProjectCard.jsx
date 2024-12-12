@@ -2,9 +2,11 @@
 // import React from 'react';
 
 import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line no-unused-vars
 const ProjectCard = ({ projectName, ProjectURL, ProjectImage }) => {
+    const { t } = useTranslation('main');
     return (
         <Fragment>
             <div className="w-[250px] flex flex-col h-[full] p-5 m-5 border rounded-lg bg-white">
@@ -14,7 +16,7 @@ const ProjectCard = ({ projectName, ProjectURL, ProjectImage }) => {
 
                     <div className="px-6 py-3 mt-auto text-center capitalize transition duration-150 ease-out border hover:ease-in -full rounded-3xl hover:bg-slate-700 hover:text-white">
                         <a className="block" href={ProjectURL} target="_blank">
-                            Visited
+                            {t('visitedTL')}
                         </a>
                     </div>
 

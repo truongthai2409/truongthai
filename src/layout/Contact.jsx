@@ -6,8 +6,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+    const { t } = useTranslation('main');
     gsap.registerPlugin(ScrollTrigger);
     const container = useRef();
 
@@ -28,7 +30,7 @@ const Contact = () => {
             <section ref={container} className="description h-[100vh] sm-max:h-[90vh] bg-image">
                 <div className="flex items-center justify-center">
                     <div className="max-w-screen-xl contact_form contact">
-                        <h1 className="p-4 text-4xl text-center text-white">Contact</h1>
+                        <h1 className="p-4 text-4xl text-center text-white">{t('contactTL')}</h1>
                         <div className="relative grid grid-cols-2 grid-rows-1 gap-none bg-light rounded-xl">
                             <img  className="h-[75vh] rounded-tl-xl rounded-bl-xl object-cover" src="images/111.jpg" alt="" />
                             <Form></Form>

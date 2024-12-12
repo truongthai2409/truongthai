@@ -4,16 +4,20 @@ import { Element } from 'react-scroll';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useViewPort } from '../hooks/useViewPort.jsx';
 import TabButton from '../compoments/TabButton.jsx';
-import Data from '../utils/Data.jsx';
+// import Data from '../utils/Data.jsx';
 import { useGSAP } from '@gsap/react';
+import { useTranslation } from 'react-i18next';
+import { Fragment } from 'react';
+import { GiAchievement } from "react-icons/gi";
 
 const About = () => {
+    const { t } = useTranslation('main');
     gsap.registerPlugin(ScrollTrigger);
     const container = useRef();
-    
+
     const { width } = useViewPort();
-    const isMobile = width <= 768; // Điều kiện cho mobile nếu độ rộng <= 768px
-    const [tab, setTab] = useState("Skills");
+    const isMobile = width <= 768;
+    const [tab, setTab] = useState("skills");
     const [isPending, startTransition] = useTransition();
 
     useGSAP(() => {
@@ -36,6 +40,99 @@ const About = () => {
         });
     };
 
+    let Data = [
+        {
+            title: t('skillsTL'),
+            id: "skills",
+            key: 0,
+            content: (
+                <Fragment>
+                    <div className="overflow-hidden skills skills_top ">
+                        <div className='flex skills_slide_right'>
+                            <img src="images/icon/html.webp" alt="" />
+                            <img src="images/icon/css.webp" alt="" />
+                            <img src="images/icon/javascript.png" alt="" />
+                            <img src="images/icon/typescript.png" alt="" />
+                            <img src="images/icon/tailwind.png" alt="" />
+                            <img src="images/icon/bootstrap.png" alt="" />
+                            <img src="images/icon/html.webp" alt="" />
+                            <img src="images/icon/css.webp" alt="" />
+                            <img src="images/icon/javascript.png" alt="" />
+                            <img src="images/icon/typescript.png" alt="" />
+                            <img src="images/icon/tailwind.png" alt="" />
+                            <img src="images/icon/bootstrap.png" alt="" />
+                        </div>
+                    </div>
+                    <div className="mt-5 overflow-hidden skills skills_top">
+                        <div className='flex skills_slide_left'>
+                            <img src="images/icon/react2.png" alt="" />
+                            <img src="images/icon/sass.png" alt="" />
+                            <img src="images/icon/nodejs.png" alt="" />
+                            <img src="images/icon/pug.png" alt="" />
+                            <img src="images/icon/ubuntu.png" alt="" />
+                            <img src="images/icon/mb5.png" alt="" />
+                            <img src="images/icon/react2.png" alt="" />
+                            <img src="images/icon/sass.png" alt="" />
+                            <img src="images/icon/pug.png" alt="" />
+                            <img src="images/icon/nodejs.png" alt="" />
+                            <img src="images/icon/mongodb.png" alt="" />
+                            <img src="images/icon/ubuntu.png" alt="" />
+                        </div>
+                    </div>
+                </Fragment>
+            )
+        },
+        {
+            title: t('experienceTL'),
+            id: "experience",
+            key: 1,
+            content: (
+                <Fragment>
+                    <ul>
+                        <li>
+                            <h1>
+                                <img className='inline-block mr-2' width="23" height="23" src="https://img.icons8.com/arcade/64/flag.png" alt="flag" />2020 - 2024
+                            </h1>
+                            <h1 className='ml-10'>{t('studyTL')}</h1>
+                        </li>
+                        <li>
+                            <h1>
+                                <img className='inline-block mr-2' width="23" height="23" src="https://img.icons8.com/arcade/64/flag.png" alt="flag" />Apr 2023 - Jun 2023
+                            </h1>
+                            <h1 className='ml-10'>{t('internTL')}</h1>
+                        </li>
+                    </ul>
+                </Fragment>
+            ),
+        },
+        {
+            title: t('certificationTL'),
+            id: "certification",
+            key: 2,
+            content: (
+                <Fragment>
+                    <ul>
+                        <li>
+                            <a className='hover:text-amber-300' href='https://www.coursera.org/account/accomplishments/certificate/URF6VKZL6QHU' target='_blank' >
+                                <GiAchievement className='inline-block mr-2 text-xl text-amber-300' />{t('awsTL')}
+                            </a>
+                        </li>
+                        <li>
+                            <a className='hover:text-amber-300' href='https://fullstack.edu.vn/cert/8msjq' target='_blank' >
+                                <GiAchievement className='inline-block mr-2 text-xl text-amber-300' /> {t('jsTL')}
+                            </a>
+                        </li>
+                        <li>
+                            <a className='hover:text-amber-300' href='https://www.udemy.com/certificate/UC-c02359da-d267-4a5e-ae7a-9fee02537c5d/' target='_blank' >
+                                <GiAchievement className='inline-block mr-2 text-xl text-amber-300' />{t('animationTL')}
+                            </a>
+                        </li>
+                    </ul>
+                </Fragment>
+            ),
+        }
+    ]
+
     return (
 
         <Element name='About'>
@@ -54,17 +151,18 @@ const About = () => {
                                 src="images/profile_rmbg.jpg" alt="" />
                         </div>
 
-                        <h1 className="mt-2 text-3xl">About Me</h1>
+                        <h1 className="mt-2 text-3xl">{t('aboutMeTL')}</h1>
                         <span>
-                            I design interactive experiences for the web. Using HTML, CSS, and JavaScript.
+                            {t('spanAboutTL')}
+                            {/* I design interactive experiences for the web. Using HTML, CSS, and JavaScript. */}
                         </span>
                         <div>
                             <ul className="h-auto mt-3 text-slate-700">
                                 {Data.map(item => (
                                     <TabButton
                                         key={item.id}
-                                        onClick={() => handleTabChange(item.title)}
-                                        isActive={tab === item.title}
+                                        onClick={() => handleTabChange(item.id)}
+                                        isActive={tab === item.id}
                                     >
                                         {item.title}
                                     </TabButton>
@@ -73,9 +171,9 @@ const About = () => {
                         </div>
                         <div className="mt-5">
                             {isPending && <div>Loading...</div>}
-                            {tab === 'Skills' && Data[0].content}
-                            {tab === 'Experience' && Data[1].content}
-                            {tab === 'Certification' && Data[2].content}
+                            {tab === 'skills' && Data[0].content}
+                            {tab === 'experience' && Data[1].content}
+                            {tab === 'certification' && Data[2].content}
                         </div>
                     </div>
                 ) : (
@@ -86,15 +184,17 @@ const About = () => {
                                 <img className='object-cover w-full h-[75vh] border rounded-lg' src="images/profile.jpg" alt="" />
                             </div>
                             <div className='w-3/5 p-8'>
-                                <h1 className="text-5xl">About Me</h1>
-                                <span>I design beautiful, interactive experiences for the web.</span>
+                                <h1 className="text-5xl">{t('aboutMeTL')}</h1>
+                                <span>{t('spanAboutTL')}
+                                    {/* I design beautiful, interactive experiences for the web. */}
+                                </span>
                                 <div>
                                     <ul className="h-auto mt-3 text-slate-700">
                                         {Data.map(item => (
                                             <TabButton
                                                 key={item.id}
-                                                onClick={() => handleTabChange(item.title)}
-                                                isActive={tab === item.title}
+                                                onClick={() => handleTabChange(item.id)}
+                                                isActive={tab === item.id}
                                             >
                                                 {item.title}
                                             </TabButton>
@@ -103,9 +203,9 @@ const About = () => {
                                 </div>
                                 <div className="mt-5">
                                     {isPending && <div>Loading...</div>}
-                                    {tab === 'Skills' && Data[0].content}
-                                    {tab === 'Experience' && Data[1].content}
-                                    {tab === 'Certification' && Data[2].content}
+                                    {tab === 'skills' && Data[0].content}
+                                    {tab === 'experience' && Data[1].content}
+                                    {tab === 'certification' && Data[2].content}
                                 </div>
                             </div>
                         </div>
